@@ -1,0 +1,28 @@
+6. Find Square Root  
+import java.util.Scanner;
+
+public class SquareRoot {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int x = sc.nextInt();
+
+        int result = 0;
+
+        // Finding the approximate square root using a simple loop
+        for (int i = 1; i <= x; i++) {
+            if (i * i == x) {
+                result = i;
+                break;
+            } else if (i * i > x) {
+                result = i - 1;  // Taking the integer part of the square root
+                break;
+            }
+        }
+
+        System.out.println("Square root (approx): " + result);
+        sc.close();
+    }
+}
